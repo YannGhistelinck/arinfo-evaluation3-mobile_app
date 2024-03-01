@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { Pressable, StyleSheet, Text, View } from 'react-native'
+import { Pressable, StyleSheet, Text, View, ScrollView } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
@@ -34,9 +34,9 @@ function Favorites() {
     <View style={styles.container}>
         <Text style={styles.title}>Mes villes favorites</Text>
 
-        <View>
+        <ScrollView>
             {favorites.map((fav, index) => (
-                <View key={index}>
+                <View key={index} style={styles.currentCardContainer}>
                     <Pressable onPress={() => deleteFavorite(fav.id)} style={styles.delete}>
                         <MaterialCommunityIcons name="delete-empty" size={24} color="#CE2C31" />
                     </Pressable>
@@ -44,20 +44,30 @@ function Favorites() {
                     
                 </View>
             ))}
-        </View>
+        </ScrollView>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         backgroundColor: '#F9FEFF',
         alignItems: 'center',
         justifyContent: 'center',
     },title: {
         fontSize: '30px'
-    },delete: {
+    },
+    currentCardContainer: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+    },
+    
+    
+    delete: {
         // backgroundColor: '#CE2C31',
         // padding: 10,
         // margin: 12

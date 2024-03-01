@@ -5,7 +5,12 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "8720cd83-3816-43e0-9170-697ceebd03ef"
+      }
+    }
   },
   "name": "weatherApp"
 }

@@ -34,7 +34,7 @@ function Account() {
 
   return (
     <View style={styles.container}>
-        <Text>Mon compte</Text>
+        <Text style={styles.title}>Mon compte</Text>
         {
             user.length !== 0 ?
             <View>
@@ -53,9 +53,12 @@ export default Account
 
 const styles = StyleSheet.create({
     container: {
-      flex: 1,
+      display: 'flex',
+      flexDirection: 'column',
       backgroundColor: '#F9FEFF',
       alignItems: 'center',
-      justifyContent: 'center',
-    },
+      justifyContent: 'start',
+    },title: {
+        fontSize: '25px',
+    }
   });
